@@ -16,3 +16,10 @@ This is a demo app build in React Native for booking flight.
 7. typescript
 
 ## Screenshots
+![add flight](./001add_flight.png)
+![search flight](./002search_flight.png)
+![flight list](./003_flight_list.png)
+![filtered flight list](./004filtered_flight_list.png)
+![added flight](./005added_flight.png)
+![booked flight](./006booked_flight.png)
+![canceled flight](./007canceled_flight.png)
