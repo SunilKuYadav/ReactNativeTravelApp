@@ -21,11 +21,16 @@ const FlightList = () => {
       <View style={styles.rowWrapper}>
         <SelectDropdown
           defaultButtonText={Constants.flight_list.filter_by_airline}
-          data={[...new Set(airlines.flat())]}
+          data={[...new Set(airlines.flat()), 'clear']}
           onSelect={selectedItem => {
             setfilterFLight(() =>
               Utils.filterFlightByAirline(flightList, selectedItem),
             );
+          }}
+          buttonTextAfterSelection={item => {
+            return item === 'clear'
+              ? Constants.flight_list.filter_by_airline
+              : item;
           }}
           buttonStyle={styles.selectText}
         />

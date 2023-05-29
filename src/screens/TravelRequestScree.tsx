@@ -66,7 +66,7 @@ const TravelRequestScree = () => {
             onChange={setDestination}
           />
         </View>
-        <View style={styles.rowWrapper}>
+        <View style={styles.columnWrapper}>
           <Pressable
             onPress={handleDateModlaToggle}
             style={styles.dateContainer}>
@@ -77,6 +77,7 @@ const TravelRequestScree = () => {
             </Text>
           </Pressable>
           <PrimaryButton
+            containerStyle={{margin: 30}}
             text={Constants.travel_request.search}
             width={'50%'}
             backgroundColor={loading ? 'gray' : '#030A74'}
@@ -115,11 +116,23 @@ export default TravelRequestScree;
 
 const styles = StyleSheet.create({
   container: {paddingHorizontal: 10, marginTop: 10},
-  column: {flexDirection: 'column'},
+  column: {
+    height: '100%',
+    width: '100%',
+    justifyContent: 'space-around',
+  },
   rowWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-end',
     marginTop: 10,
+    flexGrow: 1,
+  },
+  columnWrapper: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
+    flexGrow: 1,
   },
   dateContainer: {
     borderWidth: 1,

@@ -1,3 +1,4 @@
+import {Constants} from '../config';
 import {FlightItemProps} from '../types';
 
 const getFormattedDate = (date: string) => {
@@ -16,6 +17,9 @@ const getFormattedDateTime = (date: string) => {
 };
 
 const filterFlightByAirline = (data: FlightItemProps[], airline: string) => {
+  if (airline === 'clear') {
+    return data;
+  }
   return data.filter(item =>
     item.displayData.airlines.some(_ => _.airlineName === airline),
   );
